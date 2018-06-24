@@ -1,0 +1,17 @@
+{
+  "tests": "testcept/*_test.js",
+  "timeout": 10000,
+  "output": "./output",
+  "helpers": {
+    "WebDriverIO": {
+      "url": "http://localhost:2300",
+      "browser": "chrome"
+    }
+  },
+  "include": {
+    "I": "./steps_file.js"
+  },
+  "bootstrap": false,
+  "mocha": {},
+  "name": "express_backend"
+}
