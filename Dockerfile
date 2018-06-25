@@ -4,7 +4,9 @@ RUN apt-get update && apt-get install -y python-software-properties
 
 CMD ["add-apt-repository","ppa:webupd8team/java"]
 
-RUN apt-get update && apt-get install -y supervisor openjdk-8-jdk
+CMD ["apt-get","update"]
+
+CMD ["apt-get","install","-y supervisor openjdk-8-jdk"]
 
 RUN npm i -g selenium-standalone webdriverio
 
