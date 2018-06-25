@@ -10,7 +10,7 @@ CMD ["apt-get","install","-y supervisor openjdk-8-jdk"]
 
 RUN npm i -g selenium-standalone webdriverio
 
-RUN selenium-standalone install
+CMD ["selenium-standalone","install"]
 
 WORKDIR /usr/src/app
 
