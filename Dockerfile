@@ -1,5 +1,11 @@
 FROM node
 
+RUN npm i -g selenium-standalone webdriverio
+
+RUN selenium-standalone install
+
+RUN apt-get update && apt-get install -y supervisor
+
 WORKDIR /usr/src/app
 
 COPY ["package.json", "codecept.json*", "./"]
