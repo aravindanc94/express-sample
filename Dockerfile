@@ -2,7 +2,7 @@ FROM node
 
 RUN apt-get update && apt-get install -y python-software-properties
 
-RUN add-apt-repository ppa:openjdk-r/ppa
+CMD ["add-apt-repository","ppa:openjdk-r/ppa"]
 
 RUN apt-get update && apt-get install -y supervisor openjdk-8-jdk
 
