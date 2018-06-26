@@ -25,7 +25,7 @@ pipeline{
         stage('Building docker image'){
             steps{
                 echo 'build'
-                sh 'docker build -t expressapp:v1 /home/dit-user/workspace/dock_demo/app/'
+                sh 'docker build -t expressapp:v1 ${env.WORKSPACE}/app/'
             }
         }
         stage('Spinning off containers'){
