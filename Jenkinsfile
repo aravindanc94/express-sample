@@ -1,3 +1,5 @@
+def workspace
+
 pipeline{
     agent {
         node 'dit'
@@ -25,7 +27,8 @@ pipeline{
         stage('Building docker image'){
             steps{
                 sh 'pwd > workspace'
-                sh 'docker build -t expressapp:v1 ${readFile('workspace').trim()}/app/'
+                workspace = readFile('workspace').trim()
+                sh 'docker build -t expressapp:v1 ${workspace}/app/'
             }
         }
         stage('Spinning off containers'){
