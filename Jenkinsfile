@@ -24,8 +24,9 @@ pipeline{
         }
         stage('Building docker image'){
             steps{
-                echo 'build'
-                sh 'docker build -t expressapp:v1 ${pwd()}/app/'
+                sh 'pwd > workspace'
+                workspace = readFile('workspace').trim()
+                sh 'docker build -t expressapp:v1 ${workspace}/app/'
             }
         }
         stage('Spinning off containers'){
