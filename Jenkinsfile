@@ -25,7 +25,7 @@ pipeline{
         stage('Building docker image'){
             steps{
                 sh 'pwd > workspace'
-                workspace = readFile('workspace').trim()
+                def workspace = readFile('workspace').trim()
                 sh 'docker build -t expressapp:v1 ${workspace}/app/'
             }
         }
