@@ -25,7 +25,7 @@ pipeline{
         stage('Building docker image'){
             steps{
                 echo 'build'
-                sh 'docker build -t expressapp:v1 ${env.BUILD_NUMBER}${env.WORKSPACE}/app/'
+                sh 'docker build -t expressapp:v1 ${pwd()}/app/'
             }
         }
         stage('Spinning off containers'){
